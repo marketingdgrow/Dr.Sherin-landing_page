@@ -2670,6 +2670,193 @@ a{
     }
 }
 
+.service-benefits-shell {
+    width: min(1400px, calc(100% - 24px));
+    margin: 16px auto 30px;
+    border-radius: 22px;
+    background: transparent;
+    position: relative;
+    padding: 10px 50px 34px;
+    overflow: hidden;
+}
+
+.service-benefits-shell .shape2 {
+    display: none;
+}
+
+.service-benefits-shell .shape1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(220px, 22vw, 320px);
+    z-index: 2;
+}
+
+.service-benefits-shell .shape1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 28px rgba(39, 63, 99, 0.24));
+}
+
+.service-benefits-shell .row {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 320px) minmax(0, 1fr);
+    gap: 16px clamp(20px, 2.4vw, 34px);
+    align-items: start;
+}
+
+.service-benefits-shell .row > .col-sm-6.col-lg-5.col-xl-4:first-child {
+    grid-column: 1;
+    display: grid;
+    gap: 14px;
+}
+
+.service-benefits-shell .row > .col-sm-6.col-lg-5.col-xl-4:last-child {
+    grid-column: 3;
+    display: grid;
+    gap: 14px;
+}
+
+.service-benefits-shell .vs-feature {
+    display: block;
+    border-radius: 0;
+    background: transparent;
+    border: 0;
+    padding: 6px 0;
+    box-shadow: none;
+    transition: none;
+}
+
+.service-benefits-shell .vs-feature:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.service-benefits-shell .media-icon {
+    display: none;
+}
+
+.service-benefits-shell .icon-btn {
+    display: none;
+}
+
+.service-benefits-shell .feature-title {
+    color: #2f5bab;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 1.4vw, 32px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.service-benefits-shell .feature-text {
+    margin-top: 8px;
+    color: #5f6968;
+    font-size: clamp(16px, 0.95vw, 18px);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.service-benefits-shell .feature-list {
+    margin: 8px 0 0 18px;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+    color: #5f6968;
+}
+
+.service-benefits-shell .feature-list li {
+    font-size: clamp(16px, 0.95vw, 18px);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+@media (max-width: 980px) {
+    .service-benefits-shell {
+        width: calc(100% - 16px);
+        margin: 14px auto 34px;
+        border-radius: 16px;
+        padding: 18px 12px 20px;
+    }
+
+    .service-benefits-shell .shape1 {
+        position: relative;
+        inset: auto;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: clamp(190px, 56vw, 260px);
+        margin: 0 auto 16px;
+    }
+
+    .service-benefits-shell .shape1 img {
+        filter: drop-shadow(0 10px 16px rgba(39, 63, 99, 0.2));
+    }
+
+    .service-benefits-shell .row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .service-benefits-shell .row > .col-sm-6.col-lg-5.col-xl-4:first-child,
+    .service-benefits-shell .row > .col-sm-6.col-lg-5.col-xl-4:last-child {
+        grid-column: auto;
+        gap: 12px;
+    }
+
+    .service-benefits-shell .vs-feature {
+        border-radius: 14px;
+        padding: 4px 0;
+    }
+
+    .service-benefits-shell .feature-title {
+        font-size: clamp(22px, 6vw, 28px);
+    }
+
+    .service-benefits-shell .feature-text {
+        font-size: clamp(18px, 4.2vw, 22px);
+    }
+
+    .service-benefits-shell .feature-list li {
+        font-size: clamp(18px, 4.2vw, 22px);
+    }
+}
+
+@media (min-width: 981px) and (max-width: 1200px) {
+    .service-benefits-shell {
+        padding: 24px 16px 28px;
+    }
+
+    .service-benefits-shell .shape1 {
+        width: clamp(200px, 21vw, 260px);
+    }
+
+    .service-benefits-shell .row {
+        grid-template-columns: minmax(0, 1fr) minmax(180px, 240px) minmax(0, 1fr);
+        gap: 14px 18px;
+    }
+
+    .service-benefits-shell .vs-feature {
+        padding: 4px 0;
+    }
+
+    .service-benefits-shell .feature-title {
+        font-size: clamp(22px, 2.2vw, 30px);
+    }
+
+    .service-benefits-shell .feature-text {
+        font-size: clamp(18px, 1.5vw, 24px);
+    }
+
+    .service-benefits-shell .feature-list li {
+        font-size: clamp(18px, 1.5vw, 24px);
+    }
+}
+
 .why-choose-section {
     width: min(1400px, calc(100% - 24px));
     margin: 20px auto 90px;
