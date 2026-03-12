@@ -1803,39 +1803,86 @@ a{
 .doctor-showcase {
     margin-top: 60px;
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 24px;
-    align-items: end;
-    padding: 0 50px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+    gap: clamp(24px, 3vw, 48px);
+    align-items: center;
+    padding: 0 clamp(16px, 3.5vw, 50px);
+}
+
+.doctor-details {
+    max-width: 720px;
 }
 
 .doctor-details h3 {
+    margin: 0;
     color: #2e59a9;
     font-family: "Playfair Display", serif;
-    font-size: clamp(50px, 6vw, 50px);
+    font-size: clamp(36px, 4vw, 50px);
     font-weight: 600;
-     margin-top: 60px;
+    line-height: 1.08;
 }
 
 .doctor-details .degree {
-    margin-top: 2px;
+    margin-top: 8px;
     color: #f32f82;
-    font-size: clamp(28px, 3.2vw, 18px);
+    font-size: clamp(18px, 1.55vw, 28px);
     font-weight: 600;
+    line-height: 1.35;
 }
 
 .doctor-details .role {
-    margin-top: 2px;
+    margin-top: 8px;
     color: #3f7fd2;
-    font-size: clamp(28px, 3vw, 24px);
+    font-size: clamp(18px, 1.4vw, 26px);
     font-weight: 600;
+    line-height: 1.35;
 }
 
 .doctor-details .experience {
-    margin-top: 7px;
+    margin-top: 10px;
     color: #697374;
-    font-size: clamp(20px, 1vw, 20px);
+    font-size: clamp(16px, 1.05vw, 20px);
     font-weight: 500;
+}
+
+.doctor-details .consult-title {
+    margin-top: 28px;
+    font-size: clamp(30px, 2.7vw, 40px);
+}
+
+.doctor-details .consult-item {
+    max-width: 100%;
+    padding: 16px 0 14px;
+    border-bottom: 1px solid rgba(104, 121, 120, 0.36);
+}
+
+.doctor-details .consult-item:last-of-type {
+    border-bottom: 0;
+}
+
+.doctor-details .consult-item h4 {
+    color: #2e58a8;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(22px, 1.95vw, 32px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.doctor-details .consult-time {
+    margin-top: 10px;
+    color: #6c7676;
+    font-size: clamp(16px, 1.1vw, 20px);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.doctor-details .consult-note {
+    margin-top: 8px;
+    color: #6c7676;
+    font-size: clamp(15px, 1vw, 19px);
+    font-weight: 600;
 }
 
 .details-block {
@@ -1880,7 +1927,7 @@ a{
 }
 
 .doctor-actions {
-    margin-top: 68px;
+    margin-top: 32px;
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
@@ -1893,7 +1940,7 @@ a{
     padding: 13px 20px;
     text-decoration: none;
     text-align: center;
-    font-size: clamp(23px, 1vw, 18px);
+    font-size: clamp(18px, 1vw, 23px);
     font-weight: 600;
     display: inline-flex;
     justify-content: center;
@@ -1921,6 +1968,8 @@ a{
 .doctor-visual {
     position: relative;
     min-height: 760px;
+    width: min(100%, 560px);
+    justify-self: end;
     padding: 20px 0 20px 20px;
     overflow: visible;
 }
@@ -1946,9 +1995,9 @@ a{
 
 .doctor-info-strips {
     position: absolute;
-    right: 370px;
-    top: 210px;
-    width: min(79%, 400px);
+    right: 300px;
+    top: 214px;
+    width: min(72%, 360px);
     display: grid;
     gap: 16px;
     z-index: 1;
@@ -2134,28 +2183,58 @@ a{
     .doctor-showcase {
         margin-top: 20px;
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 20px;
+        padding: 0 6px;
+    }
+
+    .doctor-details {
+        max-width: 100%;
     }
 
     .doctor-details h3 {
-        font-size: clamp(40px, 10vw, 40px);
+        font-size: clamp(36px, 9vw, 44px);
     }
 
     .doctor-details .degree {
         margin-top: 6px;
-        font-size: clamp(28px, 7vw, 30px);
-        text-align: center;
+        font-size: clamp(18px, 4.8vw, 28px);
+        text-align: left;
     }
 
     .doctor-details .role {
         margin-top: 6px;
-        font-size: clamp(26px, 7vw, 40px);
-        text-align: center;
+        font-size: clamp(18px, 4.5vw, 26px);
+        text-align: left;
     }
 
     .doctor-details .experience {
         margin-top: 6px;
-        font-size: clamp(24px, 3vw, 20px);
+        font-size: clamp(16px, 3.8vw, 20px);
+        text-align: left;
+    }
+
+    .doctor-details .consult-title {
+        margin-top: 22px;
+        font-size: clamp(28px, 7vw, 34px);
+    }
+
+    .doctor-details .consult-item {
+        padding: 12px 0;
+    }
+
+    .doctor-details .consult-item h4 {
+        font-size: clamp(20px, 5.3vw, 28px);
+    }
+
+    .doctor-details .consult-time {
+        margin-top: 8px;
+        font-size: clamp(15px, 3.9vw, 19px);
+        gap: 8px;
+    }
+
+    .doctor-details .consult-note {
+        margin-top: 7px;
+        font-size: clamp(14px, 3.7vw, 18px);
     }
 
     .details-block {
@@ -2187,34 +2266,39 @@ a{
     .btn-outline-dark {
         width: 100%;
         min-width: 0;
-        font-size: clamp(23px, 6vw, 20px);
+        font-size: clamp(18px, 6vw, 23px);
         padding: 12px 16px;
     }
 
     .doctor-visual {
-        min-height: 510px;
+        min-height: 560px;
+        width: min(100%, 420px);
+        margin: 8px auto 0;
         padding: 8px 0 8px 0;
-        margin-top: 10px;
     }
 
     .doctor-back-shape {
-        right: 0;
-        top: 130px;
-        width: min(94%, 330px);
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 142px;
+        width: min(90%, 320px);
         height: 360px;
         border-radius: 190px 0 0 130px;
     }
 
     .doctor-main-image {
-        right: 6px;
-        bottom: 122px;
-        width: min(86%, 290px);
+        right: auto;
+        left: 50%;
+        transform: translateX(-38%);
+        bottom: 132px;
+        width: min(84%, 285px);
     }
 
     .doctor-info-strips {
-        right:130px;
-        top: 92px;
-        width: min(82%, 290px);
+        left: 0;
+        top: 104px;
+        width: min(75%, 260px);
         gap: 10px;
     }
 
@@ -2298,19 +2382,49 @@ a{
 
     .doctor-showcase {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 24px;
+        padding: 0 clamp(12px, 3vw, 32px);
+    }
+
+    .doctor-details {
+        max-width: 100%;
+    }
+
+    .doctor-details .consult-item h4 {
+        font-size: clamp(22px, 2.4vw, 28px);
+    }
+
+    .doctor-details .consult-time,
+    .doctor-details .consult-note {
+        font-size: clamp(15px, 1.6vw, 18px);
     }
 
     .doctor-visual {
         min-height: 710px;
+        width: min(100%, 560px);
+        margin: 0 auto;
     }
 
     .doctor-back-shape {
-        right: 0;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
         top: 126px;
         width: min(92%, 500px);
         height: 520px;
         border-radius: 250px 0 0 200px;
+    }
+
+    .doctor-main-image {
+        right: auto;
+        left: 50%;
+        transform: translateX(-31%);
+    }
+
+    .doctor-info-strips {
+        left: 0;
+        top: 188px;
+        width: min(68%, 360px);
     }
 }
 
@@ -2322,116 +2436,186 @@ a{
 .consultation-shell {
     border-radius: 22px;
     background: #d2e0db;
-    padding: 34px 44px 0;
+    padding: 34px 44px 10px;
     overflow: hidden;
 }
 
-.consultation-header {
-    text-align: center;
+.consultation-layout {
+    margin-top: clamp(22px, 2.2vw, 34px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.07fr) minmax(310px, 0.93fr);
+    gap: clamp(24px, 3vw, 44px);
+    align-items: center;
 }
 
-.consultation-header h2 {
+.consultation-timings {
+    display: grid;
+    align-content: start;
+    gap: clamp(14px, 1.4vw, 20px);
+}
+
+.consultation-profile {
+    max-width: 720px;
+}
+
+.consultation-profile h2 {
     color: #f12f81;
     font-family: "Playfair Display", serif;
-    font-size: clamp(44px, 4.2vw, 50px);
-    font-weight: 600;
-    line-height: 1.02;
-    letter-spacing: 0.08cap;
+    font-size: clamp(42px, 4vw, 54px);
+    font-weight: 700;
+    line-height: 1.05;
 }
 
 .consult-qual {
-    margin-top: 18px;
+    margin-top: 8px;
     color: #2e58a8;
-    font-size: clamp(24px, 1.2vw, 22px);
+    font-size: clamp(20px, 1.2vw, 24px);
     font-weight: 600;
     line-height: 1.25;
 }
 
 .consult-role {
-    margin-top: 16px;
-    padding-top: 15px;
+    margin-top: 8px;
     color: #e783a9;
-    font-size: clamp(26px, 2.8vw, 24px);
+    font-size: clamp(20px, 1.35vw, 25px);
     font-weight: 700;
-    max-width: 690px;
-    margin: auto;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
-.consultation-layout {
-    margin-top: 24px;
+.consult-experience {
+    margin-top: 8px;
+    color: #5e686a;
+    font-size: clamp(16px, 1.05vw, 20px);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.consult-box-stack {
+    width: min(100%, 720px);
     display: grid;
-    grid-template-columns: 1fr minmax(320px, 560px);
-    gap: 30px;
-    align-items: end;
-}
-
-.consultation-timings h3 {
-    color: #2f5cab;
-    font-family: "Playfair Display", serif;
-    font-size: clamp(42px, 4.7vw, 40px);
-    font-weight: 700;
-    line-height: 1.08;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
-.consult-item {
-    max-width: 640px;
-    padding: 24px 0 22px;
-    border-bottom: 2px solid rgba(108, 124, 121, 0.42);
-    transition: transform 0.24s ease;
-    margin-left: 40px;
-}
-
-.consult-item:last-child {
-    border-bottom: 0;
-}
-
-.consult-item:hover {
-    transform: translateX(8px);
-}
-
-.consult-item h4 {
-    color: #2e58a8;
-    font-family: "Playfair Display", serif;
-    font-size: clamp(30px, 2.4vw, 28px);
-    font-weight: 600;
-    line-height: 1.18;
-}
-
-.consult-time {
-    margin-top: 18px;
-    color: #6c7676;
-    font-size: clamp(20px, 1.3vw, 20px);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
     gap: 14px;
 }
 
-.consult-time span {
-    color: #f12f81;
-    font-size: 1.02em;
+.consult-info-box {
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgba(119, 135, 133, 0.42);
+    background: linear-gradient(145deg, #f5faf8 0%, #e2ece8 100%);
+    box-shadow: 0 14px 30px rgba(86, 104, 101, 0.18);
+    padding: clamp(18px, 2.2vw, 30px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    animation: consultInfoFloat 5.3s ease-in-out infinite;
 }
 
-.consult-note {
-    margin-top: 8px;
-    color: #6c7676;
-    font-size:clamp(20px, 1.3vw, 20px);
+.consult-info-box::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    right: -94px;
+    top: -104px;
+    background: radial-gradient(circle, rgba(243, 47, 130, 0.14) 0%, rgba(243, 47, 130, 0) 72%);
+    pointer-events: none;
+}
+
+.consult-info-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 34px rgba(86, 104, 101, 0.25);
+}
+
+.consult-info-box h4 {
+    margin: 0;
+    color: #2f5cab;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(28px, 2.3vw, 34px);
+    font-weight: 700;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.consult-dot {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f12f81;
+    color: #fff;
+    display: inline-grid;
+    place-items: center;
+    font-size: 18px;
+    flex: 0 0 auto;
+    box-shadow: 0 8px 16px rgba(241, 47, 129, 0.32);
+}
+
+.consult-info-box .timing {
+    margin-top: 14px;
+    color: #5f6e6f;
+    font-size: clamp(18px, 1.15vw, 22px);
     font-weight: 600;
+    display: block;
+}
+
+.consult-spec-list {
+    margin-top: 14px;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.consult-spec-list li {
+    position: relative;
+    color: #5f6e6f;
+    font-size: clamp(17px, 1.1vw, 21px);
+    font-weight: 600;
+    line-height: 1.35;
+    padding-left: 30px;
+    transition: transform 0.22s ease, color 0.22s ease;
+}
+
+.consult-spec-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    color: #2e58a8;
+    font-size: 0.95em;
+}
+
+.consult-spec-list li:hover {
+    transform: translateX(6px);
+    color: #2e58a8;
+}
+
+@keyframes consultInfoFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
 }
 
 .consultation-figure {
     margin: 0;
-    min-height: 680px;
+    min-height: 600px;
+    width: min(100%, 460px);
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    justify-self: end;
 }
 
 .consultation-doc-image {
-    width: min(100%, 350px);
+    width: min(100%, 380px);
     object-fit: contain;
     animation: docStandFloat 3.6s ease-in-out infinite;
 }
@@ -2455,87 +2639,138 @@ a{
 
     .consultation-shell {
         border-radius: 16px;
-        padding: 20px 14px 0;
-    }
-
-    .consultation-header h2 {
-        font-size: clamp(34px, 5vw, 40px);
-    }
-
-    .consult-qual {
-        margin-top: 10px;
-        font-size: clamp(20px, 1vw, 20px);
-    }
-
-    .consult-role {
-        margin-top: 8px;
-        font-size: clamp(18px, 0.3vw, 26px);
+        padding: 20px 14px 10px;
     }
 
     .consultation-layout {
         margin-top: 14px;
         grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .consultation-timings {
         gap: 12px;
     }
 
-    .consultation-timings h3 {
-        font-size: clamp(34px, 7vw, 40px);
+    .consultation-profile {
+        text-align: center;
     }
 
-    .consult-item {
-        padding: 12px 0;
-        border-bottom-width: 1px;
+    .consultation-profile h2 {
+        font-size: clamp(34px, 8.8vw, 44px);
     }
 
-    .consult-item h4 {
-        font-size: clamp(28px, 4.6vw, 36px);
+    .consult-qual {
+        margin-top: 6px;
+        font-size: clamp(18px, 4.4vw, 22px);
     }
 
-    .consult-time {
-        margin-top: 8px;
-        font-size: clamp(20px, 2.3vw, 20px);
-        gap: 8px;
+    .consult-role {
+        margin-top: 6px;
+        font-size: clamp(18px, 4.6vw, 24px);
     }
 
-    .consult-note {
-        margin-top: 8px;
-        font-size: clamp(22px, 3vw, 20px);
+    .consult-experience {
+        margin-top: 6px;
+        font-size: clamp(15px, 3.8vw, 19px);
+    }
+
+    .consult-box-stack {
+        width: 100%;
+    }
+
+    .consult-info-box {
+        border-radius: 18px;
+        padding: 16px 14px;
+    }
+
+    .consult-info-box h4 {
+        font-size: clamp(22px, 6vw, 30px);
+        gap: 10px;
+    }
+
+    .consult-dot {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .consult-info-box .timing {
+        margin-top: 10px;
+        font-size: clamp(16px, 4vw, 20px);
+    }
+
+    .consult-spec-list {
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .consult-spec-list li {
+        font-size: clamp(15px, 4vw, 19px);
+        padding-left: 24px;
     }
 
     .consultation-figure {
-        min-height: 380px;
+        min-height: 350px;
+        width: min(100%, 330px);
+        margin: 0 auto;
     }
 
     .consultation-doc-image {
-        width: min(100%, 300px);
+        width: min(100%, 290px);
     }
 }
 
 @media (min-width: 981px) and (max-width: 1200px) {
     .consultation-shell {
-        padding: 26px 22px 0;
+        padding: 26px 22px 10px;
     }
 
     .consultation-layout {
-        grid-template-columns: 1fr minmax(260px, 430px);
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
         gap: 18px;
+        align-items: center;
     }
 
-    .consult-item h4 {
-        font-size: clamp(34px, 3.1vw, 46px);
+    .consultation-profile h2 {
+        font-size: clamp(38px, 3.9vw, 46px);
     }
 
-    .consult-time,
-    .consult-note {
-        font-size: clamp(29px, 2.6vw, 38px);
+    .consult-role {
+        font-size: clamp(20px, 2vw, 24px);
+    }
+
+    .consult-experience {
+        font-size: clamp(16px, 1.7vw, 19px);
+    }
+
+    .consult-box-stack {
+        width: 100%;
+    }
+
+    .consult-info-box {
+        padding: 20px 18px;
+    }
+
+    .consult-info-box h4 {
+        font-size: clamp(24px, 2.4vw, 30px);
+    }
+
+    .consult-info-box .timing {
+        font-size: clamp(17px, 1.8vw, 20px);
+    }
+
+    .consult-spec-list li {
+        font-size: clamp(16px, 1.7vw, 19px);
     }
 
     .consultation-figure {
-        min-height: 650px;
+        min-height: 560px;
+        width: min(100%, 420px);
     }
 
     .consultation-doc-image {
-        width: min(100%, 410px);
+        width: min(100%, 360px);
     }
 }
 
@@ -2672,107 +2907,314 @@ a{
 
 .service-benefits-shell {
     width: min(1400px, calc(100% - 24px));
-    margin: 16px auto 30px;
-    border-radius: 22px;
-    background: transparent;
+    margin: 20px auto 90px;
+    border-radius: 26px;
+    background: linear-gradient(145deg, #d6e3df 0%, #edf4f1 50%, #ccddd7 100%);
+    border: 1px solid rgba(77, 94, 92, 0.28);
+    box-shadow: 0 20px 40px rgba(64, 82, 80, 0.16);
     position: relative;
-    padding: 10px 50px 34px;
+    padding: clamp(28px, 3vw, 42px) clamp(14px, 3.8vw, 50px) clamp(30px, 3.4vw, 42px);
     overflow: hidden;
+    isolation: isolate;
 }
 
-.service-benefits-shell .shape2 {
-    display: none;
-}
-
-.service-benefits-shell .shape1 {
+.service-benefits-shell::before,
+.service-benefits-shell::after {
+    content: "";
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: clamp(220px, 22vw, 320px);
-    z-index: 2;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.service-benefits-shell .shape1 img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-    filter: drop-shadow(0 20px 28px rgba(39, 63, 99, 0.24));
+.service-benefits-shell::before {
+    width: 420px;
+    height: 420px;
+    left: -180px;
+    top: -180px;
+    background: radial-gradient(circle, rgba(243, 47, 129, 0.2) 0%, rgba(243, 47, 129, 0) 72%);
 }
 
-.service-benefits-shell .row {
+.service-benefits-shell::after {
+    width: 360px;
+    height: 360px;
+    right: -170px;
+    bottom: -160px;
+    background: radial-gradient(circle, rgba(46, 88, 168, 0.2) 0%, rgba(46, 88, 168, 0) 72%);
+}
+
+.service-premium-header {
     position: relative;
-    z-index: 3;
+    z-index: 2;
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-premium-kicker {
+    color: #f22f81;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    font-size: clamp(12px, 0.85vw, 14px);
+    font-weight: 700;
+}
+
+.service-premium-header h2 {
+    margin-top: 6px;
+    color: #1a1d20;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(46px, 4.8vw, 58px);
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+.service-premium-header p {
+    margin-top: 10px;
+    color: #5d6868;
+    font-size: clamp(18px, 1.08vw, 22px);
+    font-weight: 500;
+    line-height: 1.34;
+}
+
+.service-premium-layout {
+    position: relative;
+    z-index: 2;
+    margin-top: clamp(24px, 3.2vw, 42px);
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 320px) minmax(0, 1fr);
-    gap: 16px clamp(20px, 2.4vw, 34px);
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 350px) minmax(0, 1fr);
+    gap: 18px clamp(18px, 2.7vw, 34px);
     align-items: start;
 }
 
-.service-benefits-shell .row > .col-sm-6.col-lg-5.col-xl-4:first-child {
-    grid-column: 1;
+.service-column {
     display: grid;
-    gap: 14px;
+    gap: 16px;
 }
 
-.service-benefits-shell .row > .col-sm-6.col-lg-5.col-xl-4:last-child {
-    grid-column: 3;
-    display: grid;
-    gap: 14px;
+.service-column-left .service-premium-card:nth-child(2),
+.service-column-right .service-premium-card:nth-child(2) {
+    margin-top: 18px;
 }
 
-.service-benefits-shell .vs-feature {
-    display: block;
-    border-radius: 0;
-    background: transparent;
-    border: 0;
-    padding: 6px 0;
-    box-shadow: none;
+.service-premium-card {
+    padding: 10px 0 14px;
+    border-bottom: 1px solid rgba(90, 107, 105, 0.24);
+    position: relative;
     transition: none;
 }
 
-.service-benefits-shell .vs-feature:hover {
+.service-premium-card::before {
+    content: none;
+}
+
+.service-column .service-premium-card:last-child {
+    border-bottom: 0;
+    padding-bottom: 6px;
+}
+
+.service-premium-card:hover {
     transform: none;
-    box-shadow: none;
 }
 
-.service-benefits-shell .media-icon {
-    display: none;
-}
-
-.service-benefits-shell .icon-btn {
-    display: none;
-}
-
-.service-benefits-shell .feature-title {
+.service-premium-card h3 {
     color: #2f5bab;
     font-family: "Playfair Display", serif;
-    font-size: clamp(24px, 1.4vw, 32px);
-    font-weight: 600;
-    line-height: 1.2;
+    font-size: clamp(32px, 1.65vw, 36px);
+    font-weight: 700;
+    line-height: 1.18;
 }
 
-.service-benefits-shell .feature-text {
-    margin-top: 8px;
-    color: #5f6968;
-    font-size: clamp(16px, 0.95vw, 18px);
-    font-weight: 500;
-    line-height: 1.35;
-}
-
-.service-benefits-shell .feature-list {
-    margin: 8px 0 0 18px;
+.service-sub-list {
+    margin-top: 20px;
+    list-style: none;
     padding: 0;
     display: grid;
-    gap: 6px;
-    color: #5f6968;
+    gap: 8px;
 }
 
-.service-benefits-shell .feature-list li {
-    font-size: clamp(16px, 0.95vw, 18px);
+.service-sub-list li {
+    position: relative;
+    color: #566262;
+    font-size: clamp(18px, 1.02vw, 20px);
+   
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.42;
+    padding-left: 24px;
+    transition: transform 0.26s ease, color 0.26s ease;
+}
+
+.service-sub-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0.08em;
+    color: #f22f81;
+    font-size: 0.9em;
+    transition: transform 0.26s ease, color 0.26s ease;
+}
+
+.service-sub-list li::after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: #2f5bab;
+    transition: width 0.26s ease;
+}
+
+.service-sub-list li:hover {
+    transform: translateX(8px);
+    color: #2f5bab;
+}
+
+.service-sub-list li:hover::before {
+    transform: scale(1.14);
+    color: #2f5bab;
+}
+
+.service-sub-list li:hover::after {
+    width: calc(100% - 24px);
+}
+
+.service-center-visual {
+    margin: 0;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-center-visual::after {
+    content: "";
+    position: absolute;
+    bottom: 88px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, 260px);
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent 0%, #2f5bab 24%, #f22f81 50%, #2f5bab 76%, transparent 100%);
+    animation: medicalPulseLine 2.6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.service-medical-ring {
+    position: absolute;
+    width: 88%;
+    height: 68%;
+    border-radius: 50%;
+    border: 1px solid rgba(50, 95, 166, 0.3);
+    background: radial-gradient(circle, rgba(242, 47, 129, 0.13) 0%, rgba(242, 47, 129, 0) 72%);
+    z-index: 1;
+}
+
+.service-side-stack {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    gap: 14px;
+    justify-items: center;
+    z-index: 3;
+}
+
+.service-side-stack::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, transparent 0%, #2f5bab 32%, #f22f81 50%, #2f5bab 68%, transparent 100%);
+    opacity: 0.72;
+    animation: sidePulseLine 2.8s ease-in-out infinite;
+}
+
+.service-side-stack.side-left {
+    left: 12px;
+}
+
+.service-side-stack.side-right {
+    right: 12px;
+}
+
+.service-side-stack.side-right::before {
+    animation-delay: 0.35s;
+}
+
+.service-medical-badge {
+    position: relative;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: #f7fbff;
+    border: 1px solid rgba(47, 91, 171, 0.35);
+    color: #2f5bab;
+    font-size: 18px;
+    box-shadow: 0 8px 14px rgba(70, 92, 130, 0.2);
+    z-index: 3;
+    animation: medicalBadgeFloat 3.4s ease-in-out infinite;
+}
+
+.service-side-stack .service-medical-badge:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.service-center-image {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 348px);
+    object-fit: contain;
+    transform-origin: center bottom;
+    filter: drop-shadow(0 20px 26px rgba(44, 65, 101, 0.34));
+    transform: translateY(0) scale(1.08);
+    animation: none;
+}
+
+@keyframes medicalBadgeFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes medicalPulseLine {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: translateX(-50%) scaleX(0.8);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+@keyframes sidePulseLine {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: translateX(-50%) scaleY(0.86);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: translateX(-50%) scaleY(1);
+    }
 }
 
 @media (max-width: 980px) {
@@ -2780,80 +3222,132 @@ a{
         width: calc(100% - 16px);
         margin: 14px auto 34px;
         border-radius: 16px;
-        padding: 18px 12px 20px;
+        padding: 20px 12px 24px;
     }
 
-    .service-benefits-shell .shape1 {
-        position: relative;
-        inset: auto;
-        left: auto;
-        top: auto;
-        transform: none;
-        width: clamp(190px, 56vw, 260px);
-        margin: 0 auto 16px;
+    .service-premium-kicker {
+        font-size: clamp(10px, 3.2vw, 12px);
     }
 
-    .service-benefits-shell .shape1 img {
-        filter: drop-shadow(0 10px 16px rgba(39, 63, 99, 0.2));
+    .service-premium-header h2 {
+        font-size: clamp(38px, 9.2vw, 48px);
     }
 
-    .service-benefits-shell .row {
+    .service-premium-header p {
+        font-size: clamp(16px, 4.3vw, 20px);
+    }
+
+    .service-premium-layout {
         grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 16px;
+    }
+
+    .service-center-visual {
+        order: -1;
+        min-height: 360px;
+        margin-bottom: 4px;
+    }
+
+    .service-center-visual::after {
+        bottom: 58px;
+        width: min(100%, 210px);
+    }
+
+    .service-medical-ring {
+        width: 86%;
+        height: 64%;
+    }
+
+    .service-medical-badge {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .service-side-stack {
+        gap: 10px;
+    }
+
+    .service-side-stack.side-left {
+        left: 6px;
+    }
+
+    .service-side-stack.side-right {
+        right: 6px;
+    }
+
+    .service-side-stack::before {
+        top: -8px;
+        bottom: -8px;
+    }
+
+    .service-center-image {
+        width: min(100%, 262px);
+        transform: translateY(0) scale(1.06);
+    }
+
+    .service-column {
         gap: 12px;
     }
 
-    .service-benefits-shell .row > .col-sm-6.col-lg-5.col-xl-4:first-child,
-    .service-benefits-shell .row > .col-sm-6.col-lg-5.col-xl-4:last-child {
-        grid-column: auto;
-        gap: 12px;
+    .service-column-left .service-premium-card:nth-child(2),
+    .service-column-right .service-premium-card:nth-child(2) {
+        margin-top: 0;
     }
 
-    .service-benefits-shell .vs-feature {
-        border-radius: 14px;
-        padding: 4px 0;
+    .service-premium-card {
+        padding: 10px 0 12px;
     }
 
-    .service-benefits-shell .feature-title {
-        font-size: clamp(22px, 6vw, 28px);
+    .service-premium-card h3 {
+        font-size: clamp(24px, 6.4vw, 32px);
     }
 
-    .service-benefits-shell .feature-text {
-        font-size: clamp(18px, 4.2vw, 22px);
-    }
-
-    .service-benefits-shell .feature-list li {
-        font-size: clamp(18px, 4.2vw, 22px);
+    .service-sub-list li {
+        font-size: clamp(16px, 4.2vw, 20px);
+        padding-left: 22px;
     }
 }
 
 @media (min-width: 981px) and (max-width: 1200px) {
     .service-benefits-shell {
-        padding: 24px 16px 28px;
+        padding: 26px 18px 30px;
     }
 
-    .service-benefits-shell .shape1 {
-        width: clamp(200px, 21vw, 260px);
+    .service-premium-header h2 {
+        font-size: clamp(40px, 4.2vw, 52px);
     }
 
-    .service-benefits-shell .row {
-        grid-template-columns: minmax(0, 1fr) minmax(180px, 240px) minmax(0, 1fr);
+    .service-premium-header p {
+        font-size: clamp(17px, 1.5vw, 20px);
+    }
+
+    .service-premium-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(200px, 270px) minmax(0, 1fr);
         gap: 14px 18px;
     }
 
-    .service-benefits-shell .vs-feature {
-        padding: 4px 0;
+    .service-column-left .service-premium-card:nth-child(2),
+    .service-column-right .service-premium-card:nth-child(2) {
+        margin-top: 10px;
     }
 
-    .service-benefits-shell .feature-title {
-        font-size: clamp(22px, 2.2vw, 30px);
+    .service-premium-card h3 {
+        font-size: clamp(25px, 2.3vw, 32px);
     }
 
-    .service-benefits-shell .feature-text {
-        font-size: clamp(18px, 1.5vw, 24px);
+    .service-sub-list li {
+        font-size: clamp(17px, 1.6vw, 21px);
     }
 
-    .service-benefits-shell .feature-list li {
-        font-size: clamp(18px, 1.5vw, 24px);
+    .service-center-visual {
+        min-height: 640px;
+    }
+
+    .service-center-image {
+        width: min(100%, 304px);
+        transform: translateY(0) scale(1.07);
     }
 }
 
