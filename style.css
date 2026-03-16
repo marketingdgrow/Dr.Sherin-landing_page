@@ -36,33 +36,42 @@ a{
 
 .navbar {
     max-width: 1400px;
-    height: 70px;
+    min-height: 70px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 8px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+    gap: 18px;
 }
 
 .logo {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: clamp(140px, 10vw, 188px);
+    flex: 0 1 clamp(120px, 11vw, 188px);
+    width: clamp(120px, 11vw, 188px);
+    min-width: 0;
+    max-width: 100%;
     text-decoration: none;
 }
 
 .logo img {
     width: 100%;
+    max-height: 54px;
     height: auto;
     display: block;
+    object-fit: contain;
+    object-position: left center;
 }
 
 .nav-menu {
     display: flex;
+    flex: 1 1 auto;
     align-items: center;
+    justify-content: flex-end;
     gap: 28px;
+    min-width: 0;
 }
 
 .nav-links {
@@ -79,7 +88,8 @@ a{
     font-weight: 500;
     line-height: 1;
     color: #c5c5c5;
-    margin-right:20px;
+    margin-right: 0;
+    white-space: nowrap;
     
 }
 .nav-links a:hover{
@@ -500,16 +510,21 @@ a{
 
 @media (max-width: 980px) {
     .navbar {
-        height: auto;
+        min-height: 70px;
         padding: 14px 14px;
         align-items: center;
         flex-wrap: wrap;
-        gap: 0;
+        gap: 10px;
     }
 
     .logo {
         margin-right: auto;
-        width: clamp(100px, 31vw, 160px);
+        flex: 0 1 clamp(96px, 28vw, 138px);
+        width: clamp(96px, 28vw, 138px);
+    }
+
+    .logo img {
+        max-height: 46px;
     }
 
     .nav-toggle {
@@ -526,6 +541,7 @@ a{
         margin-top: 0;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
         gap: 12px;
         transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.3s ease, margin-top 0.3s ease;
     }
@@ -713,6 +729,37 @@ a{
 }
 
 @media (min-width: 981px) and (max-width: 1200px) {
+    .navbar {
+        padding: 8px 16px;
+        gap: 14px;
+    }
+
+    .logo {
+        width: clamp(112px, 12vw, 150px);
+        flex-basis: clamp(112px, 12vw, 150px);
+    }
+
+    .logo img {
+        max-height: 48px;
+    }
+
+    .nav-menu {
+        gap: 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+
+    .appointment-btn {
+        font-size: 16px;
+        padding: 10px 22px;
+    }
+
     .hero-section {
         min-height: 650px;
         margin-bottom: 104px;
